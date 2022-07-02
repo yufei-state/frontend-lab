@@ -37,4 +37,4 @@
 
 
 ## License
-[MIT Copyright (c) 2022 Tongfei(duskStar) Zou \<dusk.star@foxmail.com>](https://github.com/yufei-state/frontend-lab/blob/master/LICENSE)
+[MIT Copyright (c) 2022 duskStar](https://github.com/yufei-state/frontend-lab/blob/master/LICENSE)

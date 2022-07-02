@@ -25,7 +25,7 @@
 
 
 ## Changelog
-Detailed changes for each version are documented in the [change log file](CHANGELOG-en.md)
+Detailed changes for each version are documented in the [change log file](CHANGELOG-en.md).
 
 
 ## Author
@@ -37,4 +37,4 @@ Located in Chengdu China, if there are any questions to this project or hoping a
 
 
 ## License
-[MIT Copyright (c) 2022 Tongfei(duskStar) Zou \<dusk.star@foxmail.com\>](https://github.com/yufei-state/frontend-lab/blob/master/LICENSE)
+[MIT Copyright (c) 2022 duskStar](https://github.com/yufei-state/frontend-lab/blob/master/LICENSE)
