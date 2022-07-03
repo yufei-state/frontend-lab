@@ -1,0 +1,58 @@
+{
+  "id": "3453664",
+  "name": "Web-API-Laboratory",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6616997",
+      "name": "关闭",
+      "font_class": "close",
+      "unicode": "eca0",
+      "unicode_decimal": 60576
+    },
+    {
+      "icon_id": "107549",
+      "name": "勾",
+      "font_class": "right",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "5287658",
+      "name": "错",
+      "font_class": "false",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "13604664",
+      "name": "警告",
+      "font_class": "warn",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "26237556",
+      "name": "信息、语音信息、提示信息-06",
+      "font_class": "info",
+      "unicode": "e915",
+      "unicode_decimal": 59669
+    },
+    {
+      "icon_id": "8988251",
+      "name": "对号",
+      "font_class": "complete",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "12719938",
+      "name": "复制",
+      "font_class": "copy",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}
