@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/favicon.jpg">
+    <link rel="stylesheet" href="/src/css/reset.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/normal.css">
+    <link rel="stylesheet" href="/src/assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="/src/css/iconfont.css">
+    <title>Frontend Lab</title>
+</head>
+
+<body>
+    <div id="root">
+        <!-- navigation -->
+        <header>
+            <div id="logo">logo</div>
+            <nav>nav</nav>
+        </header>
+
+        <!-- main content -->
+        <main>
+            <!-- main-content injection first render -->
+            <div id="content">content</div>
+
+            <!-- left-aside injection -->
+            <div id="left-aside">left-aside</div>
+
+            <!-- left-aside injection -->
+            <div id="right-aside">right-aside</div>
+        </main>
+
+        <!-- bottom info -->
+        <footer>footer</footer>
+    </div>
+
+    <!-- JS module -->
+    <script src="./src/index.js" type="module"></script>
+
+    <!-- other injection -->
+</body>
+
+</html>
