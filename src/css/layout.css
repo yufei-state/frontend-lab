@@ -31,6 +31,12 @@ main {
     align-items: stretch;
 }
 
+#content {
+    flex: 5;
+
+    background-color: #008c8c;
+}
+
 #left-aside {
     flex: 1;
     order: -1;
@@ -40,10 +46,4 @@ main {
 #right-aside {
     flex: 1;
     background-color: #417d8c;
-}
-
-#content {
-    flex: 5;
-
-    background-color: #008c8c;
 }

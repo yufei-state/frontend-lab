@@ -1,7 +1,7 @@
 import createNode from "./createNode.js"
 
 var defaultConfig = {
-    duration: 2000,
+    duration: 2500,
     selfClose: false
 }
 
@@ -13,7 +13,7 @@ var defaultConfig = {
  * @param {function} callback Callback
  * @param {object} config Define pop window's behavior, like: exist time、whether need manual close、...
  */
-export default function(type="info", text=" ", callback, config = defaultConfig) {
+export default function(type="info", text=" ", config = defaultConfig, callback) {
     // judge message type
     let iconType;
     switch(type) {
@@ -32,11 +32,11 @@ export default function(type="info", text=" ", callback, config = defaultConfig)
     
     // add message to the body
     var template = `
-        <i class="iconfont icon-${iconType}"></i>
+        <i class="iconfont m-t-2 m-r-10 f18 icon-${iconType}"></i>
         <p>${text}</p>
-        <i class="iconfont icon-guanbi" style="display: ${config.selfClose ? 'block' : 'none'}"></i>
+        <i class="iconfont icon-close mouse-point" style="display: ${config.selfClose ? 'block' : 'none'}"></i>
     `;
-    var message = createNode(template, {class: `pop-up ${type}`});
+    var message = createNode(template, {class: `pop-up border-1-s p-15 show ${type}`});
     document.body.appendChild(message);
 
     // after duration, message window start move out
@@ -52,14 +52,21 @@ export default function(type="info", text=" ", callback, config = defaultConfig)
 
     // message animation event 
     message.addEventListener('animationend', (e) => {
-        if(e.animationName === 'moveOut') {
+        if(e.animationName === 'pop-hide') {
             if (callback) callback();
             e.target.remove();
-            e.target.removeEventListener('animationend', this);
         }
     })
 
     // message mouse move event
+    message.addEventListener('mouseenter', (e) => {
+        clearTimeout(timer);
+    })
+    message.addEventListener('mouseleave', (e) => {
+        timer = setTimeout(() => {
+            message.classList.add('hide');
+        }, config.duration);
+    })
 
     return message;
 }
