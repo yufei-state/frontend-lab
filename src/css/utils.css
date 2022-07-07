@@ -1,0 +1,50 @@
+@import url('./animation.css');
+
+/* pop message */
+.pop-up {
+    min-width: 380px;
+    border-radius: 6px;
+    padding-left: 20px;
+
+    display: inline-flex;
+    align-items: center;
+
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pop-up.success {
+    background-color: #f0f9eb;
+    border-color: #e1f3d8;
+    color: #67c23a;
+}
+.pop-up.warn {
+    background-color: #fdf6ec;
+    border-color: #faecd8;
+    color: #e6a23c;
+}
+.pop-up.error {
+    background-color: #fef0f0;
+    border-color: #fde2e2;
+    color: #f56c6c;
+}
+.pop-up.info {
+    background-color: #edf2fc;
+    border-color: #ebeef5;
+    color: #909399;
+}
+
+.pop-up.show {
+    animation: .4s ease-in-out 0s pop-show;
+    animation-fill-mode: forwards;
+}
+.pop-up.hide {
+    animation: .4s ease-in-out 0s pop-hide;
+    animation-fill-mode: forwards;
+}
+
+.pop-up p {
+    flex: 1 0 auto;
+}

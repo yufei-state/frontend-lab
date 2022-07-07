@@ -1,0 +1,22 @@
+/* pop message */
+@keyframes pop-show {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+    to {
+        top: 25px;
+        opacity: 1;
+    }
+}
+
+@keyframes pop-hide {
+    from {
+        top: 25px;
+        opacity: 1;
+    }
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
