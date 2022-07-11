@@ -4,10 +4,19 @@
  * @param {*} min Minimum value or length
  * @param {*} max Maximum value or length
  * @param {string} type Desired data type, support: string、number
+ * @param {number} decimal If type is number, could specify how many decimal places to keep
  */
-export default function(min=0, max=100, type="number") {
-
-    function numRandom(min, max) {
+export default function(min=0, max=100, type="number", decimal=0) {
+    if(typeof arguments[2] !== 'string') {
+        decimal = arguments[2];
+        type = "number";
+    }
+    
+    function numRandom(min, max, decimal) {
+        if(decimal) {
+            var result = (min + Math.random() * (max - min)).toFixed(decimal);
+            return result.charAt(result.length - 1) === '0' ? result : Number(result);
+        }
         return Math.round(min + Math.random() * (max - min));
     }
     
@@ -35,7 +44,7 @@ export default function(min=0, max=100, type="number") {
 
     switch(type) {
         case "number":
-            return numRandom(min, max);
+            return numRandom(min, max, decimal);
         case "string":
             return strRandom();
         default:
