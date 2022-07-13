@@ -29,6 +29,7 @@
         + 若没指定它，previousValue 将使用数组第一个元素，而 currentValue 将使用数组第二个元素
 
 <span style="color: #C28014">**示例**</span>
+
 ```js
     function reducer(pv, cv, ci, arr) {
         var sum = pv;
@@ -42,8 +43,28 @@
 ```
 
 
+### Array.prototype.concat
+<span style="color: #FF4F4F">**功能**</span>  
++ 合并两个或多个数组
 
+> 此方法不会更改现有数组，而是返回一个新数组。
 
+<span style="color: green">**语法**</span>
++ Array.prototype.concat(arr[, arr1[, arr2[, ...[, arrN]]]])
+    + arr*（**可选**）: <u>要合并到数组当中的值</u>
+        + 若不指定该参数，则 concat 直接返回调用它的数组的一个浅拷贝
+
+<span style="color: #C28014">**示例**</span>
+
+```js
+    var arr = [1, '2', true],
+        arr1 = ['3', 4, 5],
+        arr2 = [['name', 123], 6];
+    
+    arr.concat();               // [1, '2', true]
+    arr.concat(arr1);           // [1, '2', true, '3', 4, 5]
+    arr.concat(arr1, arr2);     // [1, '2', true, '3', 4, 5, ['name', 123], 6]
+```
 
 
 <br />
