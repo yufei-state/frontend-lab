@@ -47,6 +47,31 @@
 ```
 
 
+### String.prototype.trim
+<span style="color: #FF4F4F">**功能**</span>  
++ 从一个字符串的两端删除空白字符
+
+> 返回一个两端去掉空白的新字符串。
+
+> 另有 4 个功能一样的方法：String.prototype.trimStart(别名: trimLeft)、String.prototype.trimEnd(别名: trimRight)，分别是仅去掉字符串左/右两边的空白
+
+<span style="color: green">**语法**</span>
++ String.prototype.trim()
+
+<span style="color: #C28014">**示例**</span>
+
+```js
+    var str = '   Hello world!   ';
+    str.trim();     // 'Hello world!'
+```
+
+
+### String.prototype.replace
+<span style="color: #FF4F4F">**功能**</span>  
++ 
+
+
+
 <br />
 
 # Number
@@ -56,6 +81,7 @@
 + 指定一个数字应该保留几位小数
 
 > 该数值在必要时进行四舍五入，另外在必要时会用 0 来填充小数部分，以便小数部分有指定的位数。  
+
 > 返回值是字符串。
 
 <span style="color: green">**语法**</span>
@@ -75,6 +101,26 @@
 ```
 
 
+### Number.prototype.toString
+<span style="color: #FF4F4F">**功能**</span>  
++ 返回指定 Number 对象的字符串表示形式
+
+<span style="color: green">**语法**</span>
++ Number.prototype.toString([radix])
+    + radix（**可选**）: <u>指定要用于数字到字符串的转换的进制</u>
+        + 其值介于 2 到 36 之间（包括）
+        + 若不指定它，默认为 10
+
+<span style="color: #C28014">**示例**</span>
+
+```js
+    var num = 123.4251;
+    num.toString();     // '123.4251'
+    num.toString(2);    // '1111011.0110110011010011010110101000010110000111100101'
+    num.toString(12);   // 'a3.5126a596b7758'
+```
+
+
 <br />
 
 # Array
@@ -85,6 +131,7 @@
 + 每一次运行 reducer，会将上一步的计算结果作为参数传入，最后将结果汇总为单个返回值  
 
 > reduce 不会直接改变调用它的对象，但对象可被调用的 callbackFn 所改变。  
+
 > 遍历的元素范围是在第一次调用 callbackFn 之前确定的。所以即使有元素在调用开始后被追加到数组中，这些元素也不会被 callbackFn 访问。
 
 <span style="color: green">**语法**</span>
@@ -164,7 +211,8 @@
 <span style="color: #FF4F4F">**功能**</span>  
 + 根据 begin 和 end，返回一个原数组的浅拷贝子数组
 
-> 此方法不会更改现有数组，而是返回一个新数组。  
+> 此方法不会更改现有数组，而是返回一个新数组。 
+
 > 包括 begin，不包括 end。
 
 <span style="color: green">**语法**</span>
@@ -195,7 +243,9 @@
 + 将一个数组的所有元素以提供的连接字符连接成一个字符串并返回
 
 > 如果数组只有一个项目，那么将返回该项目而不使用分隔符。  
+
 > 原数组为空数组，则返回空数组。  
+
 > 如果一个元素为 undefined 或 null，它会被转换为空字符串。
 
 <span style="color: green">**语法**</span>
@@ -257,7 +307,7 @@
     + 不能修改该对象已有属性的可枚举性、可配置性、可写性
     + 该对象的原型也不能被修改
 
-> freeze 返回的对象和传入的对象是同一个
+> freeze 返回的对象和传入的对象是同一个。
 
 <span style="color: green">**语法**</span>
 + Object.freeze(obj)
@@ -312,3 +362,51 @@
 <br />
 
 # Other
+
+### isNaN
+<span style="color: #FF4F4F">**功能**</span>  
++ 确定一个值是否为 NaN
+
+> 它和 Number.isNaN 作用一样。  
+
+> 如果 isNaN 的参数不是 Number 类型，函数会首先尝试将这个参数转换为数值再进行判断，而 Number.isNaN 不会。
+
+<span style="color: green">**语法**</span>
++ isNaN(value)
+    + value: <u>要检测的值</u>
+        
+<span style="color: #C28014">**示例**</span>
+
+```js
+    isNaN(NaN);                 // true
+    isNaN(2);                   // false
+    isNaN(Infinity);            // false
+    isNaN(true);                // false
+    isNaN(false);               // false
+    isNaN('');                  // false
+    isNaN(Infinity / Infinity); // true
+```
+
+
+###  isFinite
+
+<span style="color: #FF4F4F">**功能**</span>  
++ 判断被传入的参数值是否为一个有限数值
+
+> 它和 Number.isFinite 作用一样。  
+
+> 如果 isFinite 的参数不是 Number 类型，函数会首先尝试将这个参数转换为数值再进行判断，而 Number.isFinite 不会。
+
+<span style="color: green">**语法**</span>
++ isFinite(value)
+    + value: <u>要检测的值</u>
+        
+<span style="color: #C28014">**示例**</span>
+
+```js
+    isFinite(Infinity);     // false
+    isFinite(NaN);          // false
+    isFinite(-Infinity);    // false
+    isFinite(123);          // true
+    isFinite(1 / 0);        // false
+```
