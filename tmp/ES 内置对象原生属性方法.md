@@ -68,8 +68,27 @@
 
 ### String.prototype.replace
 <span style="color: #FF4F4F">**功能**</span>  
-+ 
++ 返回一个由替换值，替换部分或全局匹配项后的新字符串
 
+> String.prototype.replaceAll 与其功能一样，只是 replaceAll 不用刻意设置，默认全局匹配。
+
+<span style="color: green">**语法**</span>
++ String.prototype.replace(regexp|substr, newSubstr|function)
+    + regexp: <u>匹配项，一个RegExp 对象或者其字面量。该正则所匹配的内容会被第二个参数的返回值替换掉，全局匹配要加 g 修饰符</u>
+    + substr: <u>匹配项，一个字符串。其被视为一整个字符串，而不是一个正则表达式。仅第一个匹配项会被替换</u>
+    + newSubstr: <u>替换项，一个字符串。用于替换掉第一个参数在原字符串中的匹配部分</u>
+    + function: <u>替换项，一个用来创建新子字符串的函数，该函数的返回值将替换掉第一个参数匹配到的结果，有 4 个参数</u>
+        + match: 匹配的子串
+        + p1,p2, ...: 
+        + offset: 匹配到的子字符串在原字符串中的偏移量
+        + string: 被匹配的原字符串
+
+<span style="color: #C28014">**示例**</span>
+
+```js
+    var str = 'this is a testing text';
+    str.replace(/t/g, 'd');     // 'dhis is a desding dexd'
+```
 
 
 <br />
