@@ -18,10 +18,13 @@
 
 ## Branches
 ### master
+The main branch, taking the newest online version.
 
 ### feature/develop
+The develop branch for developing new content of project, its code may be newer than master branch.
 
 ### release/xxx
+The record branch of each version of the project is used as a backup after each master release.
 
 
 ## Changelog
